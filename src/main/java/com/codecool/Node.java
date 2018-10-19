@@ -1,6 +1,6 @@
 package com.codecool;
 
-public class Node {
+class Node {
 
     private Object obj;
     private Node nextNode;
