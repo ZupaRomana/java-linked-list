@@ -26,4 +26,8 @@ public class SinglyLinkedList {
         }
         length++;
     }
+
+    public Object getHead() {
+        return this.head;
+    }
 }
