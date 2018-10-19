@@ -1,6 +1,7 @@
 package com.codecool;
 
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class SinglyLinkedListTest {
 
@@ -26,6 +27,16 @@ public class SinglyLinkedListTest {
         for (int i = 0; i <= 10; i++) {
             this.linkedList.add(null);
         }
+    }
+
+    @Test
+    void get_head_when_passed_one_object() {
+        String example = "example";
+        this.linkedList.add(example);
+        String expected = "example";
+        String actual = this.linkedList.getHead();
+
+        assertEquals(expected, actual);
     }
 
     private void fillList(int numOfObjects) {
