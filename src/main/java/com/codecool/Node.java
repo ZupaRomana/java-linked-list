@@ -10,19 +10,19 @@ public class Node {
         this.nextNode = nextNode;
     }
 
-    public Object getObj() {
+    Object getObj() {
         return obj;
     }
 
-    public void setObj(Object obj) {
+    void setObj(Object obj) {
         this.obj = obj;
     }
 
-    public Node getNextNode() {
+    Node getNextNode() {
         return nextNode;
     }
 
-    public void setNextNode(Node nextNode) {
+    void setNextNode(Node nextNode) {
         this.nextNode = nextNode;
     }
 }
