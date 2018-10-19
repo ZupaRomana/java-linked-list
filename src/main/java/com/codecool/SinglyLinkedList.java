@@ -50,6 +50,10 @@ public class SinglyLinkedList<Element> {
         }
     }
 
+    public int getSize() {
+        return this.length;
+    }
+
     private class Node<E> {
         private E element;
         private Node<E> nextNode;
