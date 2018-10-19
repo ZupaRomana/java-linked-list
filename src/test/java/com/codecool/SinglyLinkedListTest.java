@@ -101,6 +101,29 @@ public class SinglyLinkedListTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void remove_element_by_index() {
+        this.fillList(32);
+        this.linkedList.remove(19);
+
+        int sizeExpected = 31;
+        int sizeActual = this.linkedList.getSize();
+
+        String elemBeforeExpected = "18";
+        String elemBeforeActual = this.linkedList.get(18);
+
+        String elemAfterExpected = "20";
+        String elemAfterActual = this.linkedList.get(19);
+
+        String elemLastExpected = "32";
+        String elemLastActual = this.linkedList.getLast();
+
+        assertEquals(sizeExpected, sizeActual);
+        assertEquals(elemBeforeExpected, elemBeforeActual);
+        assertEquals(elemAfterExpected, elemAfterActual);
+        assertEquals(elemAfterExpected, elemAfterActual);
+    }
+
     private void fillList(int numOfObjects) {
         for (int i = 0; i < numOfObjects; i++) {
             this.linkedList.add(Integer.toString(i));
