@@ -2,14 +2,13 @@ package com.codecool;
 
 public class SinglyLinkedList {
 
-    private static final int STARTING_STANDARD_ARRAY_SIZE = 0;
-    private Integer[] array;
+    private Node head;
+    private Node last;
+    private int length;
 
     public SinglyLinkedList() {
-        this.array = new Integer[STARTING_STANDARD_ARRAY_SIZE];
-    }
-
-    public SinglyLinkedList(int size) {
-        this.array = new Integer[size];
+        this.head = null;
+        this.last = null;
+        this.length = 0;
     }
 }
