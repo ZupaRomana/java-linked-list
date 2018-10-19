@@ -83,10 +83,10 @@ public class SinglyLinkedListTest {
 
     @Test
     void get_element_by_index() {
-        this.fillList(20);
+        this.fillList(200);
 
-        String expected = "18";
-        String actual = this.linkedList.get(17);
+        String expected = "180";
+        String actual = this.linkedList.get(180);
 
         assertEquals(expected, actual);
     }
