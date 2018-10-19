@@ -18,21 +18,36 @@ public class SinglyLinkedList<Element> {
             this.last = this.head;
         } else if (this.length == 1) {
             this.last = new Node<>(element);
-            this.head.setNextNode(this.last);
+            this.head.nextNode = this.last;
         } else {
             Node<Element> tempNode = this.last;
             this.last = new Node<>(element);
-            tempNode.setNextNode(this.last);
+            tempNode.nextNode = this.last;
         }
         length++;
     }
 
     public Element getHead() {
-        return this.head.getElement();
+        return this.head.element;
     }
 
     public Element getLast() {
-        return this.last.getElement();
+        return this.last.element;
+    }
+
+    public Element get(int index) {
+        System.out.println(length);
+        if (index == 0) {
+            return this.head.element;
+        } else if (index == this.length - 1) {
+            return this.last.element;
+        } else {
+            Node<Element> tempElem = this.head;
+            for (int i = 1; (index < this.length / 2) ? i <= index : i >= index ; i = (index < this.length / 2) ? i + 1 : i - 1) {
+                tempElem = tempElem.nextNode;
+            }
+            return tempElem.element;
+        }
     }
 
     private class Node<E> {
@@ -42,22 +57,6 @@ public class SinglyLinkedList<Element> {
         Node(E element) {
             this.element = element;
             this.nextNode = null;
-        }
-
-        E getElement() {
-            return element;
-        }
-
-        void setElement(E element) {
-            this.element = element;
-        }
-
-        Node<E> getNextNode() {
-            return this.nextNode;
-        }
-
-        void setNextNode(Node<E> nextNode) {
-            this.nextNode = nextNode;
         }
     }
 }
