@@ -5,7 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class SinglyLinkedListTest {
 
-    private SinglyLinkedList linkedList = new SinglyLinkedList();
+    private SinglyLinkedList<String> linkedList = new SinglyLinkedList<>();
+
 
     @Test
     void add_simple_object() {
