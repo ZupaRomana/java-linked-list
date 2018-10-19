@@ -31,28 +31,28 @@ public class SinglyLinkedList<Element> {
         return this.head.getElement();
     }
 
-    private class Node<Element> {
-        private Element element;
-        private Node<Element> nextNode;
+    private class Node<E> {
+        private E element;
+        private Node<E> nextNode;
 
-        Node(Element element) {
+        Node(E element) {
             this.element = element;
             this.nextNode = null;
         }
 
-        Element getElement() {
+        E getElement() {
             return element;
         }
 
-        void setElement(Element element) {
+        void setElement(E element) {
             this.element = element;
         }
 
-        Node<Element> getNextNode() {
+        Node<E> getNextNode() {
             return this.nextNode;
         }
 
-        void setNextNode(Node<Element> nextNode) {
+        void setNextNode(Node<E> nextNode) {
             this.nextNode = nextNode;
         }
     }
