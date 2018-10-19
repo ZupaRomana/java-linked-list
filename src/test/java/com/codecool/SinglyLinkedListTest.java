@@ -41,7 +41,7 @@ public class SinglyLinkedListTest {
 
     private void fillList(int numOfObjects) {
         for (int i = 0; i <= numOfObjects; i++) {
-            this.linkedList.add(i);
+            this.linkedList.add(String.format("%o", i));
         }
     }
 
