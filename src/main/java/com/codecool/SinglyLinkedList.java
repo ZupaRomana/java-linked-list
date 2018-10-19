@@ -31,7 +31,7 @@ public class SinglyLinkedList<Element> {
         return this.head.getElement();
     }
 
-    class Node<Element> {
+    private class Node<Element> {
         private Element element;
         private Node<Element> nextNode;
 
