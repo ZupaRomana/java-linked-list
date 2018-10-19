@@ -91,6 +91,16 @@ public class SinglyLinkedListTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void get_size() {
+        this.fillList(55);
+
+        int expected = 55;
+        int actual = this.linkedList.getSize();
+
+        assertEquals(expected, actual);
+    }
+
     private void fillList(int numOfObjects) {
         for (int i = 0; i < numOfObjects; i++) {
             this.linkedList.add(Integer.toString(i));
