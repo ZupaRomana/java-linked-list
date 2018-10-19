@@ -44,7 +44,7 @@ public class SinglyLinkedListTest {
     void get_head_when_passed_more_objects() {
         this.fillList(10);
 
-        String expected = "1";
+        String expected = "0";
         String actual = this.linkedList.getHead();
 
         assertEquals(expected, actual);
@@ -54,14 +54,35 @@ public class SinglyLinkedListTest {
     void get_last_element() {
         this.fillList(5);
 
-        String expected = "5";
+        String expected = "4";
+        String actual = this.linkedList.getLast();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void get_last_element_when_passed_nulls_only() {
+        this.linkedList.add(null);
+        this.linkedList.add(null);
+        this.linkedList.add(null);
+
+        assertNull(this.linkedList.getLast());
+    }
+
+    @Test
+    void get_last_when_nulls_and_string_combined_passed() {
+        this.linkedList.add(null);
+        this.linkedList.add(null);
+        this.fillList(3);
+
+        String expected = "2";
         String actual = this.linkedList.getLast();
 
         assertEquals(expected, actual);
     }
 
     private void fillList(int numOfObjects) {
-        for (int i = 0; i <= numOfObjects; i++) {
+        for (int i = 0; i < numOfObjects; i++) {
             this.linkedList.add(String.format("%o", i));
         }
     }
