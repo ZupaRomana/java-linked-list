@@ -31,6 +31,10 @@ public class SinglyLinkedList<Element> {
         return this.head.getElement();
     }
 
+    public Element getLast() {
+        return this.last.getElement();
+    }
+
     private class Node<E> {
         private E element;
         private Node<E> nextNode;
