@@ -85,15 +85,15 @@ public class SinglyLinkedListTest {
     void get_element_by_index() {
         this.fillList(200);
 
-        String expected = "180";
-        String actual = this.linkedList.get(180);
+        String expected = "58";
+        String actual = this.linkedList.get(58);
 
         assertEquals(expected, actual);
     }
 
     private void fillList(int numOfObjects) {
         for (int i = 0; i < numOfObjects; i++) {
-            this.linkedList.add(String.format("%o", i));
+            this.linkedList.add(Integer.toString(i));
         }
     }
 
