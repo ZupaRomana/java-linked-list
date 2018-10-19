@@ -43,7 +43,7 @@ public class SinglyLinkedList<Element> {
             return this.last.element;
         } else {
             Node<Element> tempElem = this.head;
-            for (int i = 1; (index < this.length / 2) ? i <= index : i >= index ; i = (index < this.length / 2) ? i + 1 : i - 1) {
+            for (int i = 1; i <= index; i++) {
                 tempElem = tempElem.nextNode;
             }
             return tempElem.element;
