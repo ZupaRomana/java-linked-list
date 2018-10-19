@@ -2,19 +2,19 @@ package com.codecool;
 
 class Node {
 
-    private Object obj;
+    private String obj;
     private Node nextNode;
 
-    Node(Object obj, Node nextNode) {
+    Node(String obj) {
         this.obj = obj;
-        this.nextNode = nextNode;
+        this.nextNode = null;
     }
 
-    Object getObj() {
+    String getObj() {
         return obj;
     }
 
-    void setObj(Object obj) {
+    void setObj(String obj) {
         this.obj = obj;
     }
 
