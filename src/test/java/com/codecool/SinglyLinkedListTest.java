@@ -41,6 +41,16 @@ public class SinglyLinkedListTest {
     }
 
     @Test
+    void get_head_when_passed_more_objects() {
+        this.fillList(10);
+
+        String expected = "1";
+        String actual = this.linkedList.getHead();
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
     void get_last_element() {
         this.fillList(5);
 
