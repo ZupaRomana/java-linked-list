@@ -11,6 +11,11 @@ public class SinglyLinkedListTest {
         this.fillList(1);
     }
 
+    @Test
+    void add_more_objects(){
+        this.fillList(20);
+    }
+
     private void fillList(int numOfObjects) {
         for (int i = 0; i <= numOfObjects; i++) {
             this.linkedList.add(i);
