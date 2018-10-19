@@ -40,6 +40,16 @@ public class SinglyLinkedListTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void get_last_element() {
+        this.fillList(5);
+
+        String expected = "5";
+        String actual = this.linkedList.getLast();
+
+        assertEquals(expected, actual);
+    }
+
     private void fillList(int numOfObjects) {
         for (int i = 0; i <= numOfObjects; i++) {
             this.linkedList.add(String.format("%o", i));
