@@ -16,6 +16,18 @@ public class SinglyLinkedListTest {
         this.fillList(20);
     }
 
+    @Test
+    void add_null() {
+        this.linkedList.add(null);
+    }
+
+    @Test
+    void add_more_nulls() {
+        for (int i = 0; i <= 10; i++) {
+            this.linkedList.add(null);
+        }
+    }
+
     private void fillList(int numOfObjects) {
         for (int i = 0; i <= numOfObjects; i++) {
             this.linkedList.add(i);
