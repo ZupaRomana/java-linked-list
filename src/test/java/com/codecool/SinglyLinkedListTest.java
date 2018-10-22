@@ -137,7 +137,7 @@ public class SinglyLinkedListTest {
 
         assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
             this.linkedList.remove(-5);
-        })
+        });
     }
 
     private void fillList(int numOfObjects) {
