@@ -86,4 +86,8 @@ public class SinglyLinkedList<Element> {
             this.nextNode = null;
         }
     }
+
+    protected Node<Element> createNode(Element element) {
+        return new Node<>(element);
+    }
 }
