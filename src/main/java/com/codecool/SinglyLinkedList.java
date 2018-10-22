@@ -35,8 +35,12 @@ public class SinglyLinkedList<Element> {
         return this.last.element;
     }
 
-    public Element get(int index) {
-        return this.getNode(index).element;
+    public Element get(int index) throws ArrayIndexOutOfBoundsException {
+        if (this.head == null || index < 0 || index > this.length - 1) {
+            throw new ArrayIndexOutOfBoundsException();
+        } else {
+            return this.getNode(index).element;
+        }
     }
 
     private Node<Element> getNode(int index) {
