@@ -2,9 +2,9 @@ package com.codecool;
 
 public class SinglyLinkedList<Element> {
 
-    private Node<Element> head;
-    private Node<Element> last;
-    private int length;
+    protected Node<Element> head;
+    protected Node<Element> last;
+    protected int length;
 
     public SinglyLinkedList() {
         this.head = null;
@@ -36,17 +36,20 @@ public class SinglyLinkedList<Element> {
     }
 
     public Element get(int index) {
-        System.out.println(length);
+        return this.getNode(index).element;
+    }
+
+    private Node<Element> getNode(int index) {
         if (index == 0) {
-            return this.head.element;
+            return this.head;
         } else if (index == this.length - 1) {
-            return this.last.element;
+            return this.last;
         } else {
             Node<Element> tempElem = this.head;
             for (int i = 1; i <= index; i++) {
                 tempElem = tempElem.nextNode;
             }
-            return tempElem.element;
+            return tempElem;
         }
     }
 
