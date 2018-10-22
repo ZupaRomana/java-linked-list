@@ -13,7 +13,7 @@ public class SinglyLinkedList<Element> {
     }
 
     public void add(Element element) {
-        if (this.length == 0) {
+        if (indexPointsHead(this.length)) {
             this.head = new Node<>(element);
             this.last = this.head;
         } else if (this.length == 1) {
@@ -36,7 +36,7 @@ public class SinglyLinkedList<Element> {
     }
 
     public Element get(int index) throws ArrayIndexOutOfBoundsException {
-        if (this.head == null || index < 0 || index > this.length - 1) {
+        if (isWrongIndex(index)) {
             throw new ArrayIndexOutOfBoundsException();
         } else {
             return this.getNode(index).element;
@@ -44,9 +44,9 @@ public class SinglyLinkedList<Element> {
     }
 
     private Node<Element> getNode(int index) {
-        if (index == 0) {
+        if (indexPointsHead(index)) {
             return this.head;
-        } else if (index == this.length - 1) {
+        } else if (indexPointsTail(index)) {
             return this.last;
         } else {
             Node<Element> tempElem = this.head;
@@ -62,13 +62,13 @@ public class SinglyLinkedList<Element> {
     }
 
     public void remove(int index) throws ArrayIndexOutOfBoundsException {
-        if (this.head == null || index < 0 || index > this.length - 1) {
+        if (isWrongIndex(index)) {
             throw new ArrayIndexOutOfBoundsException();
         } else {
 
-            if (index == 0) {
+            if (indexPointsHead(index)) {
                 this.head = this.head.nextNode;
-            } else if (index == this.length - 1) {
+            } else if (indexPointsTail(index)) {
                 this.last = this.getNode(this.length - 1);
                 this.last.nextNode = null;
             } else {
@@ -84,6 +84,18 @@ public class SinglyLinkedList<Element> {
             }
             this.length--;
         }
+    }
+
+    private boolean indexPointsTail(int index) {
+        return index == this.length - 1;
+    }
+
+    private boolean indexPointsHead(int index) {
+        return index == 0;
+    }
+
+    private boolean isWrongIndex(int index) {
+        return this.head == null || index < 0 || index > this.length - 1;
     }
 
     protected class Node<E> {
