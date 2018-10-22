@@ -55,7 +55,7 @@ public class SinglyLinkedListTest {
         this.fillList(5);
 
         String expected = "4";
-        String actual = this.linkedList.getLast();
+        String actual = this.linkedList.getTail();
 
         assertEquals(expected, actual);
     }
@@ -66,7 +66,7 @@ public class SinglyLinkedListTest {
         this.linkedList.add(null);
         this.linkedList.add(null);
 
-        assertNull(this.linkedList.getLast());
+        assertNull(this.linkedList.getTail());
     }
 
     @Test
@@ -76,7 +76,7 @@ public class SinglyLinkedListTest {
         this.fillList(3);
 
         String expected = "2";
-        String actual = this.linkedList.getLast();
+        String actual = this.linkedList.getTail();
 
         assertEquals(expected, actual);
     }

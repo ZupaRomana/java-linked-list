@@ -3,26 +3,26 @@ package com.codecool;
 public class SinglyLinkedList<Element> {
 
     protected Node<Element> head;
-    protected Node<Element> last;
+    protected Node<Element> tail;
     protected int length;
 
     public SinglyLinkedList() {
         this.head = null;
-        this.last = null;
+        this.tail = null;
         this.length = 0;
     }
 
     public void add(Element element) {
         if (indexPointsHead(this.length)) {
             head = new Node<>(element);
-            last = head;
+            tail = head;
         } else if (length == 1) {
-            last = new Node<>(element);
-            head.nextNode = last;
+            tail = new Node<>(element);
+            head.nextNode = tail;
         } else {
-            Node<Element> tempNode = last;
-            last = new Node<>(element);
-            tempNode.nextNode = last;
+            Node<Element> tempNode = tail;
+            tail = new Node<>(element);
+            tempNode.nextNode = tail;
         }
         length++;
     }
@@ -31,8 +31,8 @@ public class SinglyLinkedList<Element> {
         return head.element;
     }
 
-    public Element getLast() {
-        return last.element;
+    public Element getTail() {
+        return tail.element;
     }
 
     public Element get(int index) throws ArrayIndexOutOfBoundsException {
@@ -47,7 +47,7 @@ public class SinglyLinkedList<Element> {
         if (indexPointsHead(index)) {
             return head;
         } else if (indexPointsTail(index)) {
-            return last;
+            return tail;
         } else {
             Node<Element> tempElem = head;
             for (int i = 1; i <= index; i++) {
@@ -69,8 +69,8 @@ public class SinglyLinkedList<Element> {
             if (indexPointsHead(index)) {
                 head = head.nextNode;
             } else if (indexPointsTail(index)) {
-                last = getNode(length - 1);
-                last.nextNode = null;
+                tail = getNode(length - 1);
+                tail.nextNode = null;
             } else {
                 Node<Element> nodeBefore = head;
 
