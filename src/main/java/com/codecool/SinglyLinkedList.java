@@ -14,42 +14,42 @@ public class SinglyLinkedList<Element> {
 
     public void add(Element element) {
         if (indexPointsHead(this.length)) {
-            this.head = new Node<>(element);
-            this.last = this.head;
-        } else if (this.length == 1) {
-            this.last = new Node<>(element);
-            this.head.nextNode = this.last;
+            head = new Node<>(element);
+            last = head;
+        } else if (length == 1) {
+            last = new Node<>(element);
+            head.nextNode = last;
         } else {
-            Node<Element> tempNode = this.last;
-            this.last = new Node<>(element);
-            tempNode.nextNode = this.last;
+            Node<Element> tempNode = last;
+            last = new Node<>(element);
+            tempNode.nextNode = last;
         }
         length++;
     }
 
     public Element getHead() {
-        return this.head.element;
+        return head.element;
     }
 
     public Element getLast() {
-        return this.last.element;
+        return last.element;
     }
 
     public Element get(int index) throws ArrayIndexOutOfBoundsException {
         if (isWrongIndex(index)) {
             throw new ArrayIndexOutOfBoundsException();
         } else {
-            return this.getNode(index).element;
+            return getNode(index).element;
         }
     }
 
     private Node<Element> getNode(int index) {
         if (indexPointsHead(index)) {
-            return this.head;
+            return head;
         } else if (indexPointsTail(index)) {
-            return this.last;
+            return last;
         } else {
-            Node<Element> tempElem = this.head;
+            Node<Element> tempElem = head;
             for (int i = 1; i <= index; i++) {
                 tempElem = tempElem.nextNode;
             }
@@ -58,7 +58,7 @@ public class SinglyLinkedList<Element> {
     }
 
     public int getSize() {
-        return this.length;
+        return length;
     }
 
     public void remove(int index) throws ArrayIndexOutOfBoundsException {
@@ -67,12 +67,12 @@ public class SinglyLinkedList<Element> {
         } else {
 
             if (indexPointsHead(index)) {
-                this.head = this.head.nextNode;
+                head = head.nextNode;
             } else if (indexPointsTail(index)) {
-                this.last = this.getNode(this.length - 1);
-                this.last.nextNode = null;
+                last = getNode(length - 1);
+                last.nextNode = null;
             } else {
-                Node<Element> nodeBefore = this.head;
+                Node<Element> nodeBefore = head;
 
                 for (int i = 1; i < index; i++) {
                     nodeBefore = nodeBefore.nextNode;
@@ -82,12 +82,12 @@ public class SinglyLinkedList<Element> {
                 nodeBefore.nextNode = nodeToRemove.nextNode;
 
             }
-            this.length--;
+            length--;
         }
     }
 
     private boolean indexPointsTail(int index) {
-        return index == this.length - 1;
+        return index == length - 1;
     }
 
     private boolean indexPointsHead(int index) {
@@ -95,7 +95,7 @@ public class SinglyLinkedList<Element> {
     }
 
     private boolean isWrongIndex(int index) {
-        return this.head == null || index < 0 || index > this.length - 1;
+        return head == null || index < 0 || index > length - 1;
     }
 
     protected class Node<E> {
