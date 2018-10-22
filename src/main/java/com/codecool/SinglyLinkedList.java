@@ -57,7 +57,27 @@ public class SinglyLinkedList<Element> {
         return this.length;
     }
 
-    private class Node<E> {
+    public void remove(int index) {
+        if (index == 0) {
+            this.head = this.head.nextNode;
+        } else if (index == this.length - 1) {
+            this.last = this.getNode(this.length - 1);
+            this.last.nextNode = null;
+        } else {
+            Node<Element> nodeBefore = this.head;
+
+            for (int i = 1; i < index; i++) {
+                nodeBefore = nodeBefore.nextNode;
+            }
+
+            Node<Element> nodeToRemove = nodeBefore.nextNode;
+            nodeBefore.nextNode = nodeToRemove.nextNode;
+
+        }
+        this.length--;
+    }
+
+    protected class Node<E> {
         private E element;
         private Node<E> nextNode;
 
