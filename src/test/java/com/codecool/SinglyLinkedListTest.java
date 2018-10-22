@@ -116,7 +116,6 @@ public class SinglyLinkedListTest {
 
         int expected = 31;
         int actual = this.linkedList.getSize();
-
         assertEquals(expected, actual);
     }
 
