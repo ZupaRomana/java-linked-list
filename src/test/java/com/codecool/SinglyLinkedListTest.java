@@ -92,6 +92,14 @@ public class SinglyLinkedListTest {
     }
 
     @Test
+    void get_element_wrong_index_passed() {
+        this.fillList(10);
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
+           this.linkedList.get(500);
+        });
+    }
+
+    @Test
     void get_size() {
         this.fillList(55);
 
