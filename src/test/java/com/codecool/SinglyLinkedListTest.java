@@ -131,6 +131,15 @@ public class SinglyLinkedListTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void remove_element_wrong_index_passed() {
+        this.fillList(51);
+
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
+            this.linkedList.remove(-5);
+        })
+    }
+
     private void fillList(int numOfObjects) {
         for (int i = 0; i < numOfObjects; i++) {
             this.linkedList.add(Integer.toString(i));
