@@ -122,6 +122,18 @@ public class SinglyLinkedListTest {
         assertEquals(elemBeforeExpected, elemBeforeActual);
         assertEquals(elemAfterExpected, elemAfterActual);
         assertEquals(elemAfterExpected, elemAfterActual);
+        assertEquals(elemLastExpected, elemLastActual);
+    }
+
+    @Test
+    void remove_element_check_size() {
+        this.fillList(32);
+        this.linkedList.remove(19);
+
+        int expected = 31;
+        int actual = this.linkedList.getSize();
+
+        assertEquals(expected, actual);
     }
 
     private void fillList(int numOfObjects) {
