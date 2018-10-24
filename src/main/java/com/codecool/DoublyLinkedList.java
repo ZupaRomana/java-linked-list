@@ -16,6 +16,15 @@ public class DoublyLinkedList<Element> {
         if (size == 0) {
             head = new Node<>(element);
             tail = head;
+        } else if (size == 1) {
+            tail = new Node<>(element);
+            head.nextNode = tail;
+            tail.previousNode = head;
+        } else {
+            Node<Element> tempNode = tail;
+            tail = new Node<>(element);
+            tail.previousNode = tempNode;
+            tempNode.nextNode = tail;
         }
         size++;
     }
