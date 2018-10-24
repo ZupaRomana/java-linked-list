@@ -1,32 +1,33 @@
 package com.codecool;
 
-public class DoublyLinkedList<Element> extends SinglyLinkedList<Element> {
+public class DoublyLinkedList<Element> {
+
+    private Node<Element> head;
+    private Node<Element> tail;
+    private int size;
 
     public DoublyLinkedList() {
-        super();
+
     }
 
-    @Override
     public void add(Element element) {
-
     }
 
-    @Override
     public Element get(int index) throws ArrayIndexOutOfBoundsException {
         return null;
     }
 
-    @Override
     public void remove(int index) throws ArrayIndexOutOfBoundsException {
 
     }
 
-    class NodeDouble<E> extends Node<E> {
-        private NodeDouble<E> previousNode;
+    private class Node<Element>  {
+        private Element element;
+        private Node<Element> previousNode;
+        private Node<Element> nextNode;
 
-        NodeDouble(E nextElement) {
-            super(nextElement);
-            this.previousNode = null;
+        Node() {
+
         }
     }
 }
