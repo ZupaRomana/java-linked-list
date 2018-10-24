@@ -13,6 +13,11 @@ public class DoublyLinkedList<Element> {
     }
 
     public void add(Element element) {
+        if (size == 0) {
+            head = new Node<>(element);
+            tail = head;
+        }
+        size++;
     }
 
     public Element get(int index) throws ArrayIndexOutOfBoundsException {
@@ -28,8 +33,10 @@ public class DoublyLinkedList<Element> {
         private Node<Element> previousNode;
         private Node<Element> nextNode;
 
-        Node() {
-
+        Node(Element element) {
+            this.element = element;
+            nextNode = null;
+            previousNode = null;
         }
     }
 }
