@@ -2,9 +2,9 @@ package com.codecool;
 
 public class SinglyLinkedList<Element> {
 
-    protected Node<Element> head;
-    protected Node<Element> tail;
-    protected int size;
+    private Node<Element> head;
+    private Node<Element> tail;
+    private int size;
 
     public SinglyLinkedList() {
         this.head = null;
@@ -13,7 +13,7 @@ public class SinglyLinkedList<Element> {
     }
 
     public void add(Element element) {
-        if (indexPointsHead(this.size)) {
+        if (size == 0) {
             head = new Node<>(element);
             tail = head;
         } else if (size == 1) {
@@ -94,11 +94,11 @@ public class SinglyLinkedList<Element> {
         return index == 0;
     }
 
-    private boolean isWrongIndex(int index) {
+    private  boolean isWrongIndex(int index) {
         return head == null || index < 0 || index > size - 1;
     }
 
-    protected class Node<E> {
+    private class Node<E> {
         private E element;
         private Node<E> nextNode;
 
