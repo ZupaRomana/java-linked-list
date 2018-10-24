@@ -7,7 +7,9 @@ public class DoublyLinkedList<Element> {
     private int size;
 
     public DoublyLinkedList() {
-
+        head = null;
+        tail = null;
+        size = 0;
     }
 
     public void add(Element element) {
