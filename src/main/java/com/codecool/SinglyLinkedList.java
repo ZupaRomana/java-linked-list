@@ -4,19 +4,19 @@ public class SinglyLinkedList<Element> {
 
     protected Node<Element> head;
     protected Node<Element> tail;
-    protected int length;
+    protected int size;
 
     public SinglyLinkedList() {
         this.head = null;
         this.tail = null;
-        this.length = 0;
+        this.size = 0;
     }
 
     public void add(Element element) {
-        if (indexPointsHead(this.length)) {
+        if (indexPointsHead(this.size)) {
             head = new Node<>(element);
             tail = head;
-        } else if (length == 1) {
+        } else if (size == 1) {
             tail = new Node<>(element);
             head.nextNode = tail;
         } else {
@@ -24,7 +24,7 @@ public class SinglyLinkedList<Element> {
             tail = new Node<>(element);
             tempNode.nextNode = tail;
         }
-        length++;
+        size++;
     }
 
     public Element getHead() {
@@ -58,7 +58,7 @@ public class SinglyLinkedList<Element> {
     }
 
     public int getSize() {
-        return length;
+        return size;
     }
 
     public void remove(int index) throws ArrayIndexOutOfBoundsException {
@@ -69,7 +69,7 @@ public class SinglyLinkedList<Element> {
             if (indexPointsHead(index)) {
                 head = head.nextNode;
             } else if (indexPointsTail(index)) {
-                tail = getNode(length - 1);
+                tail = getNode(size - 1);
                 tail.nextNode = null;
             } else {
                 Node<Element> nodeBefore = head;
@@ -82,12 +82,12 @@ public class SinglyLinkedList<Element> {
                 nodeBefore.nextNode = nodeToRemove.nextNode;
 
             }
-            length--;
+            size--;
         }
     }
 
     private boolean indexPointsTail(int index) {
-        return index == length - 1;
+        return index == size - 1;
     }
 
     private boolean indexPointsHead(int index) {
@@ -95,7 +95,7 @@ public class SinglyLinkedList<Element> {
     }
 
     private boolean isWrongIndex(int index) {
-        return head == null || index < 0 || index > length - 1;
+        return head == null || index < 0 || index > size - 1;
     }
 
     protected class Node<E> {

@@ -10,7 +10,7 @@ class DoublyLinkedListTest {
 
     @Test
     void addsObject_when_oneObjectPassed() {
-        list.add("example");
+        
     }
 
 }
