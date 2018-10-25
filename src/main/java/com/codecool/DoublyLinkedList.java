@@ -42,7 +42,25 @@ public class DoublyLinkedList<Element> {
     }
 
     public Element get(int index) throws ArrayIndexOutOfBoundsException {
-        return null;
+        if (indexPointsHead(index)) {
+            return head.element;
+        } else if (indexPointsTail(index)) {
+            return tail.element;
+        } else {
+            Node<Element> focus = head;
+            for (int i = 1; i <= index; i++) {
+                focus = focus.nextNode;
+            }
+            return focus.element;
+        }
+    }
+
+    private boolean indexPointsHead(int index) {
+        return index == 0;
+    }
+
+    private boolean indexPointsTail(int index) {
+        return index == size - 1;
     }
 
     public void remove(int index) throws ArrayIndexOutOfBoundsException {

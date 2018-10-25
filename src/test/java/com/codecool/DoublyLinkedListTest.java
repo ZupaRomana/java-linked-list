@@ -52,7 +52,7 @@ class DoublyLinkedListTest {
     void returnsValidElement() {
         fillList(20);
 
-        String expected = "11";
+        String expected = "12";
         String actual = list.get(11);
 
         assertEquals(expected, actual);
