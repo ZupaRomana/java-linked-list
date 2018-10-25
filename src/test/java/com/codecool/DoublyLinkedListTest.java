@@ -18,4 +18,10 @@ class DoublyLinkedListTest {
         assertEquals(expected, actual);
     }
 
+    private void fillList(int numOfObjects) {
+        for (int i = 0; i < numOfObjects; i++) {
+            list.add(Integer.toString(i));
+        }
+    }
+
 }
