@@ -72,7 +72,11 @@ public class DoublyLinkedList<Element> {
     }
 
     public void remove(int index) throws ArrayIndexOutOfBoundsException {
+        if (badIndexPassed(index)) {
+            throw new ArrayIndexOutOfBoundsException();
+        } else {
 
+        }
     }
 
     private class Node<Element>  {
