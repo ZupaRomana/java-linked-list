@@ -37,6 +37,10 @@ public class DoublyLinkedList<Element> {
         return tail.element;
     }
 
+    public int getSize() {
+        return size;
+    }
+
     public Element get(int index) throws ArrayIndexOutOfBoundsException {
         return null;
     }
