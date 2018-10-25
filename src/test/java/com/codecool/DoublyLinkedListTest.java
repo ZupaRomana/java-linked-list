@@ -100,6 +100,17 @@ class DoublyLinkedListTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void removeObject_when_oneObjectInList() {
+        fillList(1);
+        list.remove(0);
+
+        String expected = "";
+        String actual = list.toString();
+
+        assertEquals(expected, actual);
+    }
+
     private void fillList(int numOfObjects) {
         for (int i = 1; i <= numOfObjects; i++) {
             list.add(Integer.toString(i));
