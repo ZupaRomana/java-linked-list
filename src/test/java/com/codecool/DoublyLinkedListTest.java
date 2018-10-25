@@ -68,6 +68,16 @@ class DoublyLinkedListTest {
         });
     }
 
+    @Test
+    void throwsException_when_removeBadIndexPassed() {
+        fillList(4);
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
+           list.remove(100);
+           list.remove(-1);
+           list.remove(4);
+        });
+    }
+
     private void fillList(int numOfObjects) {
         for (int i = 1; i <= numOfObjects; i++) {
             list.add(Integer.toString(i));
