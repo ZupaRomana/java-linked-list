@@ -58,6 +58,15 @@ class DoublyLinkedListTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void throwsException_when_badIndexPassed() {
+        fillList(15);
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
+           list.get(100);
+           list.get(-3);
+        });
+    }
+
     private void fillList(int numOfObjects) {
         for (int i = 1; i <= numOfObjects; i++) {
             list.add(Integer.toString(i));
