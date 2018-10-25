@@ -75,7 +75,12 @@ public class DoublyLinkedList<Element> {
         if (badIndexPassed(index)) {
             throw new ArrayIndexOutOfBoundsException();
         } else {
-
+            Node<Element> focus = head;
+            for (int i = 1; i < index; i++) {
+                focus = focus.nextNode;
+            }
+            focus.previousNode.nextNode = focus.nextNode;
+            focus.nextNode.previousNode = focus.previousNode;
         }
     }
 
