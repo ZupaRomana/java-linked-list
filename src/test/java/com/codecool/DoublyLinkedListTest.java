@@ -10,7 +10,12 @@ class DoublyLinkedListTest {
 
     @Test
     void addsObject_when_oneObjectPassed() {
-        
+        list.add("Example");
+
+        String expected = " Example";
+        String actual = list.toString();
+
+        assertEquals(expected, actual);
     }
 
 }
