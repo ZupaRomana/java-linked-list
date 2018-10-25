@@ -10,16 +10,16 @@ class DoublyLinkedListTest {
 
     @Test
     void addsObject_when_oneObjectPassed() {
-        list.add("Example");
+        fillList(5);
 
-        String expected = " Example";
+        String expected = " 1 2 3 4 5";
         String actual = list.toString();
 
         assertEquals(expected, actual);
     }
 
     private void fillList(int numOfObjects) {
-        for (int i = 0; i < numOfObjects; i++) {
+        for (int i = 1; i <= numOfObjects; i++) {
             list.add(Integer.toString(i));
         }
     }
