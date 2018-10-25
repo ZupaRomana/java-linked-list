@@ -29,6 +29,10 @@ public class DoublyLinkedList<Element> {
         size++;
     }
 
+    public Element getHead() {
+        return head.element;
+    }
+
     public Element get(int index) throws ArrayIndexOutOfBoundsException {
         return null;
     }
