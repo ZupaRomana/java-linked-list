@@ -48,4 +48,15 @@ public class DoublyLinkedList<Element> {
             previousNode = null;
         }
     }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        Node<Element> focus = head;
+        for (int i = 0; i < size; i++) {
+            sb.append(" ");
+            sb.append(focus.element);
+            focus = focus.nextNode;
+        }
+        return sb.toString();
+    }
 }
