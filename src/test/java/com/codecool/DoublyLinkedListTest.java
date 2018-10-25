@@ -28,6 +28,16 @@ class DoublyLinkedListTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    void returnsTail() {
+        fillList(33);
+
+        String expected = "33";
+        String actual = list.getTail();
+
+        assertEquals(expected, actual);
+    }
+
     private void fillList(int numOfObjects) {
         for (int i = 1; i <= numOfObjects; i++) {
             list.add(Integer.toString(i));
