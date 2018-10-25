@@ -64,6 +64,7 @@ class DoublyLinkedListTest {
         assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
            list.get(100);
            list.get(-3);
+           list.get(15);
         });
     }
 
